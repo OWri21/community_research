@@ -1,0 +1,444 @@
+import { useState } from "react";
+
+const sections = [
+  {
+    id: "theory",
+    tab: "Theory",
+    icon: "◈",
+    title: "Theoretical Foundation",
+    subtitle: "What frameworks should ground your research?",
+    color: "#4A7C59",
+    bg: "#F0F7F2",
+    sectionWisdom: "A framework isn't a bureaucratic requirement — it's the shared language that lets your community, your organisation, and any future researcher understand exactly what you were trying to change and why.",
+    blocks: [
+      {
+        heading: "Food Literacy Framework",
+        body: "Food literacy describes the behaviours, skills, and knowledge people need to plan, select, prepare, and eat food in ways that support their health and wellbeing. For your group sessions, this is your primary outcome construct for nutrition literacy. It is organised into four measurable domains:",
+        list: [
+          { label: "Plan & Manage", detail: "Budgeting, meal planning, time management around food" },
+          { label: "Select Food", detail: "Reading labels, making nutritional choices, understanding food environments" },
+          { label: "Prepare Food", detail: "Cooking skills, food safety, handling and storage" },
+          { label: "Eat", detail: "Cultural, social, and dietary eating practices" },
+        ],
+        wisdom: "You can't evaluate what you haven't defined. Choosing a clear framework for food literacy means your pre and post measures will actually reflect what your program is doing — rather than measuring something adjacent to it.",
+        tip: "Map each session in your group program to one or more of these domains before you design your evaluation. This keeps your measures honest.",
+        ref: "Vidgen HA & Gallegos D (2014). Defining food literacy and its components. Appetite, 76, 50–59.",
+      },
+      {
+        heading: "Social Ecological Model (SEM)",
+        body: "Group programs work at multiple levels simultaneously — not just changing individual knowledge. The SEM frames health behaviours as shaped by five nested levels of influence. This matters because your group sessions are themselves an interpersonal intervention:",
+        list: [
+          { label: "Individual", detail: "Knowledge, attitudes, self-efficacy, food literacy skills" },
+          { label: "Interpersonal", detail: "Peer influence, group dynamics, social support within sessions" },
+          { label: "Community", detail: "Local food environment, cultural norms, place-based context" },
+          { label: "Institutional", detail: "Program structure, organisation delivering sessions" },
+          { label: "Societal", detail: "Policy, food systems, socioeconomic determinants" },
+        ],
+        wisdom: "Individual outcomes are the easiest to measure and the hardest to sustain. The SEM reminds you that lasting change usually lives at the interpersonal and community levels — which is exactly where group programs operate.",
+        tip: "You don't need to measure all five levels. But naming them in your rationale demonstrates to reviewers and funders that you understand why individual outcomes alone don't tell the whole story.",
+        ref: "McLeroy KR et al. (1988). An ecological perspective on health promotion programs. Health Education Quarterly, 15(4), 351–377.",
+      },
+    ],
+  },
+  {
+    id: "design",
+    tab: "Design",
+    icon: "◎",
+    title: "Research Design",
+    subtitle: "How should you structure your study?",
+    color: "#2C5F8A",
+    bg: "#EEF4FA",
+    sectionWisdom: "Research design is not about choosing the most sophisticated method — it's about choosing the method that can actually answer your question with the people and resources you have.",
+    blocks: [
+      {
+        heading: "Community-Based Participatory Research (CBPR)",
+        body: "CBPR is the gold standard for community health research. It means community members are partners in the research — not just subjects. This produces more relevant, trustworthy, and sustainable findings. Nine core principles guide CBPR practice:",
+        list: [
+          { label: "Community as unit of identity", detail: "Recognise the local community as a place with its own distinct identity" },
+          { label: "Build on community strengths", detail: "Start from what the community does well, not its deficits" },
+          { label: "Facilitate equitable participation", detail: "Shared decision-making with participants, not just researchers" },
+          { label: "Integrate knowledge and action", detail: "Research should lead to practical improvement in the program" },
+          { label: "Promote co-learning", detail: "Researchers and community members learn from each other" },
+          { label: "Address social determinants", detail: "Acknowledge food access, income, and social isolation as context" },
+          { label: "Build community capacity", detail: "Leave the community with skills and knowledge after the research ends" },
+          { label: "Disseminate findings locally", detail: "Feed results back to participants before publishing elsewhere" },
+          { label: "Commit to long-term engagement", detail: "Build trust over time, not just for the duration of the study" },
+        ],
+        wisdom: "The communities that are hardest to recruit into research are usually the ones who have been researched without benefit before. Trust is the methodology.",
+        tip: "Even if your study is small in scale, grounding it in CBPR principles significantly strengthens its credibility and ethical standing — and makes it much easier to obtain ethics approval.",
+        ref: "Israel BA et al. (2005). Methods in Community-Based Participatory Research for Health. Jossey-Bass. / Minkler M & Wallerstein N (Eds.).",
+      },
+      {
+        heading: "Logic Model",
+        body: "A logic model is a one-page visual map of how your program is expected to work. It is a foundational tool for evaluation design — without it, you won't know what to measure or why. Structure it as a chain of causation:",
+        list: [
+          { label: "Inputs", detail: "Staff, funding, venue, session materials, participants' time" },
+          { label: "Activities", detail: "The group sessions themselves — cooking, nutrition education, discussion" },
+          { label: "Outputs", detail: "Number of sessions delivered, attendance, sessions completed" },
+          { label: "Short-term outcomes", detail: "Improved food literacy scores, increased social connection, confidence" },
+          { label: "Long-term outcomes", detail: "Sustained dietary change, reduced social isolation, community wellbeing" },
+        ],
+        wisdom: "A logic model forces you to make your assumptions visible. If you can't draw the chain from your activities to your outcomes, neither will your participants — or your funders.",
+        tip: "Build your logic model before you finalise your measurement tools. It will tell you exactly which outcomes to measure and at what time point — and it will stop you collecting data you never use.",
+        ref: "Ball L et al. (2017). Using logic models to enhance methodological quality of primary health-care interventions. Australian Journal of Primary Health, 23(1), 53–60.",
+      },
+      {
+        heading: "Mixed Methods Design",
+        body: "For community-based group programs, neither quantitative nor qualitative data alone tells the full story. A mixed methods approach gives you the numbers to demonstrate change and the stories to explain why — and it is increasingly expected by funders and ethics committees. A practical design:",
+        list: [
+          { label: "Pre/post surveys", detail: "Validated questionnaires before first session and after final session" },
+          { label: "Focus groups or yarning circles", detail: "Small group discussions post-program to explore experience and meaning" },
+          { label: "Attendance and session records", detail: "Simple process data — who came, how often, what was covered" },
+          { label: "Facilitator reflections", detail: "Brief written notes from session facilitators after each session" },
+        ],
+        wisdom: "Numbers tell you that something changed. Stories tell you what it meant to the person it changed for. You need both — especially when the outcome is something as human as feeling less alone.",
+        tip: "Qualitative data is especially important for social health outcomes. A Likert scale rarely captures the nuance of whether someone now feels less isolated in their community.",
+        ref: "Creswell JW & Plano Clark VL (2017). Designing and Conducting Mixed Methods Research (3rd ed.). Sage Publications.",
+      },
+    ],
+  },
+  {
+    id: "evaluation",
+    tab: "Evaluation",
+    icon: "◉",
+    title: "Program Evaluation",
+    subtitle: "How do you know if it worked — and for whom?",
+    color: "#8B5E3C",
+    bg: "#FAF3EC",
+    sectionWisdom: "Evaluation is not the last step in a program — it is designed at the same time as the program itself. If you wait until after delivery to plan your evaluation, you will have already lost your baseline.",
+    blocks: [
+      {
+        heading: "RE-AIM Framework",
+        body: "RE-AIM is one of the most widely used frameworks for evaluating the real-world impact of community health programs. It asks five questions that go well beyond 'did outcomes improve?' — making it ideal for demonstrating that your program is viable at scale:",
+        list: [
+          { label: "Reach", detail: "What proportion of the intended population participated? Were they representative?" },
+          { label: "Effectiveness", detail: "Did nutrition literacy and social health improve among participants?" },
+          { label: "Adoption", detail: "What proportion of eligible settings or facilitators delivered the program?" },
+          { label: "Implementation", detail: "Was the program delivered as planned, consistently, and with fidelity?" },
+          { label: "Maintenance", detail: "Were improvements sustained at 6–12 month follow-up? Can the program continue independently?" },
+        ],
+        wisdom: "A program that works brilliantly for the 20 people who showed up may be failing the 200 who didn't. RE-AIM asks you to account for the whole population, not just your participants.",
+        tip: "For a first study, prioritise Reach and Effectiveness. Add Implementation fidelity as a minimum process measure. Save Adoption and Maintenance for follow-up phases or grant applications.",
+        ref: "Glasgow RE & Estabrooks PE (2018). Pragmatic Applications of RE-AIM for Health Care Initiatives in Community and Clinical Settings. Preventing Chronic Disease, 15, 170271.",
+      },
+      {
+        heading: "Process Evaluation",
+        body: "Process evaluation documents whether the program was delivered as intended — entirely separate from whether it worked. Without it, you cannot explain why outcomes did or didn't change. The Medical Research Council guidance identifies three core components:",
+        list: [
+          { label: "Fidelity", detail: "Was the program content delivered as designed across all sessions?" },
+          { label: "Dose", detail: "How much of the program did participants actually receive? What was average attendance?" },
+          { label: "Reach & Recruitment", detail: "How were participants recruited? Who was not reached, and why?" },
+        ],
+        wisdom: "If your outcomes don't improve, you need to know whether the program didn't work — or whether the program wasn't actually delivered. These are very different problems with very different solutions.",
+        tip: "Process data is often collected informally — sign-in sheets, facilitator notes, session records — but it must be planned from day one. Retrospective process data is almost never reliable.",
+        ref: "Moore GF et al. (2015). Process evaluation of complex interventions: Medical Research Council guidance. BMJ, 350, h1258.",
+      },
+      {
+        heading: "Ripple Effects Mapping",
+        body: "Ripple Effects Mapping (REM) is a participatory evaluation method designed to capture the unintended and hard-to-measure outcomes that flow outward from a community program. For social health in particular — friendship formation, community confidence, reduced stigma — it surfaces what surveys miss:",
+        list: [
+          { label: "Facilitated group sessions", detail: "Participants map how the program affected their lives, relationships, and community" },
+          { label: "Mind-map format", detail: "Visual, collaborative documentation of direct and indirect impacts" },
+          { label: "Stories as evidence", detail: "Participants identify and provide concrete examples, not just perceptions" },
+        ],
+        wisdom: "The most important outcomes of a community program are often the ones nobody planned for. Someone makes a friend. Someone starts cooking for a neighbour. Someone feels confident enough to join another group. REM is how you find those stories.",
+        tip: "REM works particularly well in close-knit communities where the social ripple of a group program reaches beyond direct participants — into families, local networks, and other services.",
+        ref: "Chazdon S et al. (2017). A Field Guide to Ripple Effects Mapping. University of Minnesota Extension.",
+      },
+    ],
+  },
+  {
+    id: "tools",
+    tab: "Measures",
+    icon: "◇",
+    title: "Measurement Tools",
+    subtitle: "What validated instruments should you use?",
+    color: "#5A3E8B",
+    bg: "#F3F0FA",
+    sectionWisdom: "Use validated tools wherever possible — not because community research requires perfection, but because validation means someone else has already confirmed the tool measures what it claims to measure. That's work you don't have to redo.",
+    blocks: [
+      {
+        heading: "Nutrition Literacy — IFLQ-19 & FLBC",
+        body: "The International Food Literacy Questionnaire (IFLQ-19) is a 100-item validated self-administered survey for adults, mapped directly to the four-domain food literacy framework. The Food Literacy Behaviour Checklist (FLBC) is a shorter validated alternative built specifically for program evaluation contexts:",
+        list: [
+          { label: "IFLQ-19", detail: "Comprehensive 100-item tool; best for research publications and grant-funded studies requiring detailed measurement" },
+          { label: "FLBC", detail: "Shorter validated checklist; designed specifically for evaluating group nutrition programs — lower participant burden" },
+          { label: "Both tools", detail: "Validated in Australian adult populations including low-income and diverse groups" },
+          { label: "Administration", detail: "Self-administered; can be delivered on paper or digitally; suitable for pre/post design" },
+        ],
+        wisdom: "Participant burden is a real ethical consideration in community research. A 100-item survey after a cooking session is a different experience from a 20-item checklist. Choose the tool your participants can actually complete without frustration.",
+        tip: "For a first-time community study with limited resources, the FLBC is likely your best starting point. Reserve the IFLQ-19 for a follow-up study or if you have a research partner institution supporting data collection.",
+        ref: "Amouzandeh C et al. (2019). A scoping review of food literacy measures for adults. Nutrients, 11(5), 1071. / Begley A et al. (2019). Evaluation tool development for food literacy programs. Nutrients, 11(1), 201.",
+      },
+      {
+        heading: "Social Health — Friendship Scale & UCLA Loneliness Scale",
+        body: "Social health is not the same as social connectedness, and social connectedness is not the same as loneliness — these are related but distinct constructs that require different tools. For a community group program, measure both:",
+        list: [
+          { label: "Friendship Scale (Hawthorne, 2006)", detail: "6-item scale measuring social connectedness; validated in Australian populations via HILDA survey; strengths-based framing" },
+          { label: "UCLA Loneliness Scale (3-item)", detail: "Brief validated measure of subjective loneliness; widely used in community health research globally" },
+          { label: "Together", detail: "Using both tools gives you a fuller picture — someone can feel connected in session but still experience loneliness at home" },
+          { label: "Administration", detail: "Both tools take under 3 minutes combined; appropriate for pre/post design" },
+        ],
+        wisdom: "Loneliness and social connectedness are not opposites. A person can feel genuinely welcomed in a group session and still go home to an empty house. Measuring both tells a more honest story.",
+        tip: "The Friendship Scale uses positive framing ('I find it easy to relate to others') rather than deficit framing ('I feel lonely'). This matters in a community setting where stigma around isolation can affect how honestly people respond.",
+        ref: "Hawthorne G (2006). Measuring social isolation in older adults: development and initial validation of the Friendship Scale. Social Indicators Research, 77(3), 521–548. / Lobo E et al. (2022). Psychometric assessment of scales for measuring loneliness and social isolation: analysis of the HILDA survey. Health & Quality of Life Outcomes, 20, 61.",
+      },
+      {
+        heading: "Contextual & Process Measures",
+        body: "Alongside your primary outcome tools, collect these contextual data points at baseline. They are essential for characterising who your participants actually are — and for interpreting why your outcomes turned out the way they did:",
+        list: [
+          { label: "Demographic profile", detail: "Age, gender, postcode, household composition, employment status, income band" },
+          { label: "Food security status", detail: "USDA 2-item food security screener — brief, validated, and directly relevant to nutrition literacy interpretation" },
+          { label: "Health literacy baseline", detail: "Single-item screener or Newest Vital Sign (NVS) — identifies participants who may need additional support with written materials" },
+          { label: "Program satisfaction", detail: "5–7 item Likert scale post-session; captures participant experience separate from outcomes" },
+          { label: "Attendance record", detail: "Simple register of sessions attended per participant — essential for dose analysis in process evaluation" },
+        ],
+        wisdom: "Demographic data is not bureaucracy — it's context. Without it, you cannot say whether your program worked for everyone equally, or whether it worked brilliantly for some and not at all for others. Equity lives in the subgroup analysis.",
+        tip: "Food security status is particularly important context — it directly shapes which nutrition literacy behaviours are realistically available to participants. If someone cannot afford to buy fresh produce, measuring their 'Select Food' domain in isolation will misrepresent their literacy.",
+        ref: "Bickel G et al. (2000). Guide to Measuring Household Food Security. USDA Food and Nutrition Service. / Weiss BD et al. (2005). Quick assessment of literacy in primary care: The Newest Vital Sign. Annals of Family Medicine, 3(6), 514–522.",
+      },
+    ],
+  },
+  {
+    id: "refs",
+    tab: "References",
+    icon: "◫",
+    title: "Key References",
+    subtitle: "A consolidated reading list in priority order",
+    color: "#3D3D3D",
+    bg: "#F5F5F3",
+    sectionWisdom: "",
+    blocks: [],
+  },
+];
+
+const refs = [
+  { priority: "Essential", label: "Food literacy theory", citation: "Vidgen HA & Gallegos D (2014). Defining food literacy and its components. Appetite, 76, 50–59." },
+  { priority: "Essential", label: "Program evaluation framework", citation: "Glasgow RE & Estabrooks PE (2018). Pragmatic Applications of RE-AIM. Preventing Chronic Disease, 15, 170271." },
+  { priority: "Essential", label: "Logic models", citation: "Ball L et al. (2017). Using logic models to enhance methodological quality of primary health-care interventions. Australian Journal of Primary Health, 23(1), 53–60." },
+  { priority: "Essential", label: "Process evaluation", citation: "Moore GF et al. (2015). Process evaluation of complex interventions: MRC guidance. BMJ, 350, h1258." },
+  { priority: "Essential", label: "Social health measurement", citation: "Hawthorne G (2006). Measuring social isolation in older adults: development and initial validation of the Friendship Scale. Social Indicators Research, 77(3), 521–548." },
+  { priority: "Important", label: "Food literacy measurement review", citation: "Amouzandeh C et al. (2019). A scoping review of food literacy measures for adults. Nutrients, 11(5), 1071." },
+  { priority: "Important", label: "Food literacy behaviour checklist", citation: "Begley A et al. (2019). Evaluation tool development for food literacy programs. Nutrients, 11(1), 201." },
+  { priority: "Important", label: "Community organising for health", citation: "Kadariya S, Ball L et al. (2023). Community organising frameworks, models, and processes to improve health. IJERPH, 20(7), 5341." },
+  { priority: "Important", label: "Social ecological model", citation: "McLeroy KR et al. (1988). An ecological perspective on health promotion programs. Health Education Quarterly, 15(4), 351–377." },
+  { priority: "Important", label: "HILDA social isolation scales", citation: "Lobo E et al. (2022). Psychometric assessment of loneliness and social isolation scales: HILDA survey analysis. Health & Quality of Life Outcomes, 20, 61." },
+  { priority: "Useful", label: "CBPR methodology", citation: "Israel BA et al. (2005). Methods in Community-Based Participatory Research for Health. Jossey-Bass." },
+  { priority: "Useful", label: "Mixed methods design", citation: "Creswell JW & Plano Clark VL (2017). Designing and Conducting Mixed Methods Research (3rd ed.). Sage Publications." },
+  { priority: "Useful", label: "Ripple Effects Mapping", citation: "Chazdon S et al. (2017). A Field Guide to Ripple Effects Mapping. University of Minnesota Extension." },
+  { priority: "Useful", label: "Food security screening", citation: "Bickel G et al. (2000). Guide to Measuring Household Food Security. USDA Food and Nutrition Service." },
+];
+
+const priorityColors = { Essential: "#4A7C59", Important: "#2C5F8A", Useful: "#8B5E3C" };
+
+export default function Guide() {
+  const [active, setActive] = useState("theory");
+  const [openBlock, setOpenBlock] = useState(null);
+  const current = sections.find((s) => s.id === active);
+
+  const handleTab = (id) => { setActive(id); setOpenBlock(null); };
+
+  return (
+    <div style={{ fontFamily: "'Palatino Linotype', 'Palatino', 'Book Antiqua', Georgia, serif", background: "#EDEBE5", minHeight: "100vh" }}>
+
+      {/* Header */}
+      <div style={{ background: "#1C1C1C", padding: "20px 24px 0" }}>
+        <div style={{ maxWidth: 760, margin: "0 auto" }}>
+          <div style={{ color: "#FFFFFF", fontSize: 19, marginBottom: 18, lineHeight: 1.35 }}>
+            A Practical Guide to Evaluating Group Program Sessions on<br />
+            <span style={{ color: "#7EC8A0" }}>Nutrition Literacy & Social Health</span>
+          </div>
+          <div style={{ display: "flex", gap: 2, overflowX: "auto" }}>
+            {sections.map((s) => (
+              <button key={s.id} onClick={() => handleTab(s.id)} style={{
+                background: active === s.id ? s.bg : "transparent",
+                color: active === s.id ? s.color : "rgba(255,255,255,0.45)",
+                border: "none",
+                borderRadius: "6px 6px 0 0",
+                padding: "10px 16px 12px",
+                cursor: "pointer",
+                fontSize: 13,
+                fontFamily: "inherit",
+                fontWeight: active === s.id ? "bold" : "normal",
+                whiteSpace: "nowrap",
+                transition: "all 0.15s",
+              }}>
+                <span style={{ marginRight: 5, opacity: 0.65 }}>{s.icon}</span>{s.tab}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Body */}
+      <div style={{ background: current.bg, minHeight: "calc(100vh - 100px)", padding: "26px 24px 52px", transition: "background 0.2s" }}>
+        <div style={{ maxWidth: 760, margin: "0 auto" }}>
+
+          {/* Section header */}
+          <div style={{ marginBottom: 20 }}>
+            <h2 style={{ fontSize: 21, color: current.color, margin: "0 0 3px", fontWeight: "normal" }}>{current.title}</h2>
+            <p style={{ fontSize: 13, color: "#666", margin: 0, fontStyle: "italic" }}>{current.subtitle}</p>
+          </div>
+
+          {/* Section-level wisdom */}
+          {current.sectionWisdom && (
+            <div style={{
+              background: current.color,
+              borderRadius: 10,
+              padding: "16px 20px",
+              marginBottom: 22,
+              display: "flex",
+              gap: 14,
+              alignItems: "flex-start",
+            }}>
+              <div style={{ fontSize: 22, flexShrink: 0, marginTop: 1, opacity: 0.85 }}>❝</div>
+              <p style={{ fontSize: 13, color: "rgba(255,255,255,0.92)", margin: 0, lineHeight: 1.75, fontStyle: "italic" }}>
+                {current.sectionWisdom}
+              </p>
+            </div>
+          )}
+
+          {/* Blocks */}
+          {active !== "refs" && current.blocks.map((block, bi) => (
+            <div key={bi} style={{ marginBottom: 12 }}>
+              <button onClick={() => setOpenBlock(openBlock === bi ? null : bi)} style={{
+                width: "100%",
+                background: openBlock === bi ? "#FFFFFF" : "rgba(255,255,255,0.6)",
+                border: `1.5px solid ${openBlock === bi ? current.color : "rgba(0,0,0,0.1)"}`,
+                borderRadius: openBlock === bi ? "10px 10px 0 0" : 10,
+                padding: "15px 20px",
+                textAlign: "left",
+                cursor: "pointer",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                fontFamily: "inherit",
+                transition: "all 0.15s",
+              }}>
+                <div>
+                  <div style={{ fontSize: 15, fontWeight: "bold", color: current.color, marginBottom: 2 }}>{block.heading}</div>
+                  <div style={{ fontSize: 11, color: "#888", fontStyle: "italic" }}>{block.list.length} components · tap to expand</div>
+                </div>
+                <div style={{ color: current.color, fontSize: 18, opacity: 0.5 }}>{openBlock === bi ? "▲" : "▼"}</div>
+              </button>
+
+              {openBlock === bi && (
+                <div style={{
+                  background: "#FFFFFF",
+                  border: `1.5px solid ${current.color}`,
+                  borderTop: "none",
+                  borderRadius: "0 0 10px 10px",
+                  padding: "20px 22px",
+                }}>
+                  {/* Body */}
+                  <p style={{ fontSize: 13, lineHeight: 1.8, color: "#333", margin: "0 0 16px" }}>{block.body}</p>
+
+                  {/* List */}
+                  <div style={{ marginBottom: 18 }}>
+                    {block.list.map((item, li) => (
+                      <div key={li} style={{ display: "flex", marginBottom: li < block.list.length - 1 ? 8 : 0, alignItems: "flex-start" }}>
+                        <div style={{ width: 3, background: current.color, borderRadius: 2, flexShrink: 0, marginTop: 4, marginRight: 12, alignSelf: "stretch", minHeight: 14 }} />
+                        <div>
+                          <span style={{ fontSize: 13, fontWeight: "bold", color: current.color }}>{item.label}: </span>
+                          <span style={{ fontSize: 13, color: "#444", lineHeight: 1.6 }}>{item.detail}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Wisdom bite */}
+                  <div style={{
+                    background: "#F9F6FF",
+                    border: `1px solid ${current.color}30`,
+                    borderLeft: `3px solid ${current.color}`,
+                    borderRadius: "0 7px 7px 0",
+                    padding: "12px 16px",
+                    marginBottom: 12,
+                    display: "flex",
+                    gap: 10,
+                    alignItems: "flex-start",
+                  }}>
+                    <span style={{ fontSize: 17, color: current.color, opacity: 0.6, flexShrink: 0 }}>❝</span>
+                    <p style={{ fontSize: 12.5, color: "#333", margin: 0, lineHeight: 1.75, fontStyle: "italic" }}>{block.wisdom}</p>
+                  </div>
+
+                  {/* Practical tip */}
+                  <div style={{
+                    background: "#FFFBEF",
+                    border: "1px solid #E8D97A",
+                    borderRadius: 7,
+                    padding: "11px 15px",
+                    marginBottom: 14,
+                    fontSize: 12,
+                    color: "#6B5500",
+                    lineHeight: 1.65,
+                  }}>
+                    <strong>💡 Practical tip:</strong> {block.tip}
+                  </div>
+
+                  {/* Reference */}
+                  <div style={{
+                    background: "#F5F5F5",
+                    borderRadius: 6,
+                    padding: "9px 13px",
+                    fontSize: 11,
+                    color: "#555",
+                    fontFamily: "monospace",
+                    lineHeight: 1.6,
+                  }}>
+                    📚 {block.ref}
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+
+          {/* References tab */}
+          {active === "refs" && (
+            <div>
+              {["Essential", "Important", "Useful"].map((priority) => (
+                <div key={priority} style={{ marginBottom: 26 }}>
+                  <div style={{ display: "inline-flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
+                    <div style={{ width: 9, height: 9, borderRadius: "50%", background: priorityColors[priority] }} />
+                    <span style={{ fontSize: 11, letterSpacing: 2, textTransform: "uppercase", color: priorityColors[priority], fontWeight: "bold" }}>
+                      {priority}
+                    </span>
+                  </div>
+                  {refs.filter((r) => r.priority === priority).map((r, i) => (
+                    <div key={i} style={{
+                      background: "#FFFFFF",
+                      border: "1px solid rgba(0,0,0,0.07)",
+                      borderLeft: `4px solid ${priorityColors[priority]}`,
+                      borderRadius: "0 8px 8px 0",
+                      padding: "12px 16px",
+                      marginBottom: 8,
+                    }}>
+                      <div style={{ fontSize: 11, color: priorityColors[priority], letterSpacing: 0.5, textTransform: "uppercase", marginBottom: 4, fontWeight: "bold" }}>{r.label}</div>
+                      <div style={{ fontSize: 12, color: "#333", lineHeight: 1.65, fontFamily: "monospace" }}>{r.citation}</div>
+                    </div>
+                  ))}
+                </div>
+              ))}
+
+              {/* Where each ref is used */}
+              <div style={{ background: "#1C1C1C", borderRadius: 10, padding: "18px 20px", color: "white", marginTop: 4 }}>
+                <div style={{ fontSize: 10, letterSpacing: 2, textTransform: "uppercase", opacity: 0.4, marginBottom: 12 }}>Where each reference is used</div>
+                {[
+                  { tab: "Theory", refs: "Vidgen & Gallegos (2014), McLeroy et al. (1988)" },
+                  { tab: "Design", refs: "Ball et al. (2017), Israel et al. (2005), Creswell & Plano Clark (2017)" },
+                  { tab: "Evaluation", refs: "Glasgow & Estabrooks (2018), Moore et al. (2015), Chazdon et al. (2017)" },
+                  { tab: "Measures", refs: "Amouzandeh et al. (2019), Begley et al. (2019), Hawthorne (2006), Lobo et al. (2022), Bickel et al. (2000)" },
+                ].map((row, i) => (
+                  <div key={i} style={{ display: "flex", gap: 12, marginBottom: i < 3 ? 8 : 0, fontSize: 12 }}>
+                    <div style={{ opacity: 0.4, flexShrink: 0, width: 72 }}>{row.tab}</div>
+                    <div style={{ opacity: 0.75, lineHeight: 1.55 }}>{row.refs}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
